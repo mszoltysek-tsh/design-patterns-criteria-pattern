@@ -1,10 +1,16 @@
 <?php
 
-class HumanRaceEnum extends AbstractEnum
+class HumanRaceEnum implements EnumInterface
 {
     const BLACK     = 'black';
     const CAUCASIAN = 'caucasian';
     const ASIAN     = 'asian';
 
-    protected $values = [self::ASIAN, self::BLACK, self::CAUCASIAN];
+    /**
+     * @return array
+     */
+    public static function getValues() : array
+    {
+        return [self::ASIAN, self::BLACK, self::CAUCASIAN];
+    }
 }

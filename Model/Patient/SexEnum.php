@@ -1,10 +1,16 @@
 <?php
 
-class SexEnum extends AbstractEnum
+class SexEnum implements EnumInterface
 {
     const MALE   = 'male';
     const FEMALE = 'female';
     const OTHER  = 'other';
 
-    protected $values = [self::MALE, self::FEMALE, self::OTHER];
+    /**
+     * @return array
+     */
+    public static function getValues() : array
+    {
+        return [self::MALE, self::FEMALE, self::OTHER];
+    }
 }

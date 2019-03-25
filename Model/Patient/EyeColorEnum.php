@@ -1,10 +1,16 @@
 <?php
 
-class EyeColorEnum extends AbstractEnum
+class EyeColorEnum implements EnumInterface
 {
     const BLUE  = 'blue';
     const BROWN = 'brown';
     const GREEN = 'green';
 
-    protected $values = [self::BLUE, self::BROWN, self::GREEN];
+    /**
+     * @return array
+     */
+    public static function getValues() : array
+    {
+        return [self::BLUE, self::BROWN, self::GREEN];
+    }
 }
