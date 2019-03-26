@@ -1,5 +1,7 @@
 <?php
 
+namespace Model\Address;
+
 class Address
 {
     /**

@@ -1,5 +1,9 @@
 <?php
 
+namespace Model\Patient;
+
+use Util\EnumInterface;
+
 class HumanRaceEnum implements EnumInterface
 {
     const BLACK     = 'black';

@@ -1,5 +1,9 @@
 <?php
 
+namespace Model\Patient;
+
+use Util\EnumInterface;
+
 class BloodTypeEnum implements EnumInterface
 {
     const ZERO_RH_MINUS = '0Rh-';

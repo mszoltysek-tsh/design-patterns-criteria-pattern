@@ -1,5 +1,9 @@
 <?php
 
+namespace Model\Human;
+
+use Model\Address\Address;
+
 class Human
 {
     /**
@@ -11,6 +15,11 @@ class Human
      * @var string
      */
     protected $lastName;
+
+    /**
+     * @var Address
+     */
+    protected $address;
 
     /**
      * @var \DateTime
@@ -145,6 +154,25 @@ class Human
     public function setPesel($pesel)
     {
         $this->pesel = $pesel;
+        return $this;
+    }
+
+    /**
+     * @return Address
+     */
+    public function getAddress(): Address
+    {
+        return $this->address;
+    }
+
+    /**
+     * @param Address $address
+     *
+     * @return Human
+     */
+    public function setAddress(Address $address): Human
+    {
+        $this->address = $address;
         return $this;
     }
 }

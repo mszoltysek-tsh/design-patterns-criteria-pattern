@@ -1,5 +1,9 @@
 <?php
 
+namespace Model\Patient;
+
+use Model\Human\Human;
+
 class Patient extends Human
 {
     /**

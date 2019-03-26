@@ -1,5 +1,9 @@
 <?php
 
+namespace Model\Patient;
+
+use Util\EnumInterface;
+
 class EyeColorEnum implements EnumInterface
 {
     const BLUE  = 'blue';

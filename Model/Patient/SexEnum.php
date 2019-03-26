@@ -1,5 +1,10 @@
 <?php
 
+namespace Model\Patient;
+
+
+use Util\EnumInterface;
+
 class SexEnum implements EnumInterface
 {
     const MALE   = 'male';
