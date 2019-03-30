@@ -2,6 +2,7 @@
 
 namespace Model\Patient;
 
+use DateTime;
 use Model\Human\Human;
 
 class Patient extends Human
@@ -10,6 +11,11 @@ class Patient extends Human
      * @var int
      */
     private $height;
+
+    /**
+     * @var int
+     */
+    private $weight;
 
     /**
      * @var int
@@ -221,6 +227,25 @@ class Patient extends Human
     public function setBloodParameters($bloodParameters)
     {
         $this->bloodParameters = $bloodParameters;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getWeight()
+    {
+        return $this->weight;
+    }
+
+    /**
+     * @param int $weight
+     *
+     * @return Patient
+     */
+    public function setWeight($weight)
+    {
+        $this->weight = $weight;
         return $this;
     }
 }

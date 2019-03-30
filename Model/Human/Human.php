@@ -2,6 +2,7 @@
 
 namespace Model\Human;
 
+use DateTime;
 use Model\Address\Address;
 
 class Human
