@@ -36,52 +36,53 @@ function generatePatient() : Patient
     $patient->setRace($faker->randomElement(HumanRaceEnum::getValues()));
     $patient->setSex($faker->randomElement(SexEnum::getValues()));
 
+    $factor = $faker->randomFloat(2, 0.8, 1.2);
     $bloodParams = new BloodParameters();
     $bloodParams->setErythrocytes($faker->randomFloat(
         1,
-        BloodParametersReference::getErythrocytesMin($patient->getSex()) - 1,
-        BloodParametersReference::getErythrocytesMax($patient->getSex()) + 1
+        BloodParametersReference::getErythrocytesMin($patient->getSex()) * $factor,
+        BloodParametersReference::getErythrocytesMax($patient->getSex()) * $factor
     ));
     $bloodParams->setHematocrit($faker->randomFloat(
         1,
-        BloodParametersReference::getHematocritMin($patient->getSex()) - 0.3,
-        BloodParametersReference::getHematocritMax($patient->getSex()) + 0.3
+        BloodParametersReference::getHematocritMin($patient->getSex()) * $factor,
+        BloodParametersReference::getHematocritMax($patient->getSex()) * $factor
     ));
     $bloodParams->setHemoglobin($faker->randomFloat(
         1,
-        BloodParametersReference::getHemoglobinMin($patient->getSex()) - 3,
-        BloodParametersReference::getHemoglobinMax($patient->getSex()) + 3
+        BloodParametersReference::getHemoglobinMin($patient->getSex()) * $factor,
+        BloodParametersReference::getHemoglobinMax($patient->getSex()) * $factor
     ));
     $bloodParams->setLeukocytes($faker->randomFloat(
         1,
-        BloodParametersReference::getLeukocytesMin() - 3,
-        BloodParametersReference::getLeukocytesMax() + 3
+        BloodParametersReference::getLeukocytesMin() * $factor,
+        BloodParametersReference::getLeukocytesMax() * $factor
     ));
     $bloodParams->setLymphocytes($faker->randomFloat(
         1,
-        BloodParametersReference::getLymphocytesMin() - 1,
-        BloodParametersReference::getLymphocytesMax() + 1
+        BloodParametersReference::getLymphocytesMin() * $factor,
+        BloodParametersReference::getLymphocytesMax() * $factor
     ));
     $bloodParams->setMCH($faker->numberBetween(
-        BloodParametersReference::getMCHMin() - 10,
-        BloodParametersReference::getMCHMax() + 10
+        BloodParametersReference::getMCHMin() * $factor,
+        BloodParametersReference::getMCHMax() * $factor
     ));
     $bloodParams->setMCHC($faker->numberBetween(
-        BloodParametersReference::getMCHCMin() - 10,
-        BloodParametersReference::getMCHCMax() + 10
+        BloodParametersReference::getMCHCMin() * $factor,
+        BloodParametersReference::getMCHCMax() * $factor
     ));
     $bloodParams->setMCV($faker->numberBetween(
-        BloodParametersReference::getMCVMin($patient->getSex()) - 20,
-        BloodParametersReference::getMCVMax($patient->getSex()) + 20
+        BloodParametersReference::getMCVMin($patient->getSex()) * $factor,
+        BloodParametersReference::getMCVMax($patient->getSex()) * $factor
     ));
     $bloodParams->setMonocytes($faker->randomFloat(
         1,
         BloodParametersReference::getMonocytesMin(),
-        BloodParametersReference::getMonocytesMax() + 0.5
+        BloodParametersReference::getMonocytesMax() * $factor
     ));
     $bloodParams->setThrombocytes($faker->numberBetween(
-        BloodParametersReference::getThrombocytesMin() - 50,
-        BloodParametersReference::getThrombocytesMax() + 50
+        BloodParametersReference::getThrombocytesMin() * $factor,
+        BloodParametersReference::getThrombocytesMax() * $factor
     ));
 
     $patient->setBloodParameters($bloodParams);
