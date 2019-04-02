@@ -1,3 +1,3 @@
 <?php
 
-const POPULATION = 1000;
+const POPULATION = 5000;

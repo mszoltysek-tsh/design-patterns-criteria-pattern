@@ -61,8 +61,8 @@ function printBloodParameter(BloodParameters $parameters, $sex)
         ], [
             'Hematocrit',
             $parameters->getHematocrit(),
-            BloodParametersReference::getHemoglobinMin($sex),
-            BloodParametersReference::getHemoglobinMax($sex),
+            BloodParametersReference::getHematocritMin($sex),
+            BloodParametersReference::getHematocritMax($sex),
         ], [
             'MCV',
             $parameters->getMCV(),
